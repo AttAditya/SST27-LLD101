@@ -1,8 +1,9 @@
 package solid.ex07.src;
 public class Demo07 {
     public static void main(String[] args) {
-        Machine m = new BasicPrinter();
-        m.print("Hello");
-        m.scan("/tmp/out"); // blows up
+        PrintingMachine machine = Configs.printingMachine;
+        
+        machine.print("Hello");
+        // machine.scan("/tmp/out"); <- Not Allowed
     }
 }
