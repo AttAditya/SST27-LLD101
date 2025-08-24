@@ -1,4 +1,4 @@
-package SOLID.ex03.src;
+package solid.ex03.src;
 
 public class Demo03 {
     public static void main(String[] args) {

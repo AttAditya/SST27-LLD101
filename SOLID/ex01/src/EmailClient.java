@@ -1,4 +1,4 @@
-package SOLID.ex01.src;
+package solid.ex01.src;
 
 public class EmailClient extends CommunicationClient {
     public void send(String to, String body) {

@@ -1,3 +1,4 @@
+package solid.ex05.src;
 public class Rectangle {
     protected int w,h;
     void setWidth(int w){ this.w = w; }

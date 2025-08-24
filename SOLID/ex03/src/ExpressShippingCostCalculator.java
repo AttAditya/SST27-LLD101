@@ -1,4 +1,4 @@
-package SOLID.ex03.src;
+package solid.ex03.src;
 
 public class ExpressShippingCostCalculator extends ShippingCostCalculator {
     public ExpressShippingCostCalculator() {

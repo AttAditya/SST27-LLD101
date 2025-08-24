@@ -1,3 +1,4 @@
+package solid.ex05.src;
 
 public class Demo05 {
     static int areaAfterResize(Rectangle r){

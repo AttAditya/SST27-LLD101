@@ -1,4 +1,4 @@
-package SOLID.ex01.src;
+package solid.ex01.src;
 
 public class OrderService {
     private CommunicationClient communicationClient = Configs.client;

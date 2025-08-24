@@ -1,3 +1,4 @@
+package solid.ex04.src;
 
 public class PaymentService {
     String pay(Payment p){

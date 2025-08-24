@@ -1,3 +1,4 @@
+package solid.ex10.src;
 public class ReportService {
     void generate(){
         ConsoleLogger logger = new ConsoleLogger();

@@ -1,4 +1,4 @@
-package SOLID.ex03.src;
+package solid.ex03.src;
 
 public class OvernightShipment extends Shipment {
     public OvernightShipment(double w) {

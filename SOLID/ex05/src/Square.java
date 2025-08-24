@@ -1,3 +1,4 @@
+package solid.ex05.src;
 
 public class Square extends Rectangle {
     @Override void setWidth(int w){ this.w = this.h = w; }
