@@ -1,7 +1,7 @@
 package solid.ex06.src;
 public class Demo06 {
     public static void main(String[] args) {
-        new Aviary().release(new Bird());
-        new Aviary().release(new Penguin()); // runtime error
+        new Aviary().release(new Eagle());
+        // new Aviary().release(new Penguin()); <- won't allow anymore
     }
 }
