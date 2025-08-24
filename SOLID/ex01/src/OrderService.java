@@ -1,3 +1,5 @@
+package SOLID.ex01.src;
+
 public class OrderService {
     private CommunicationClient communicationClient = Configs.client;
     private TaxUtil taxUtil = Configs.taxUtil;
