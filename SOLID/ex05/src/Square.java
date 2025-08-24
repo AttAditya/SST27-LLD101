@@ -1,6 +1,16 @@
 package solid.ex05.src;
 
-public class Square extends Rectangle {
-    @Override void setWidth(int w){ this.w = this.h = w; }
-    @Override void setHeight(int h){ this.w = this.h = h; }
+public class Square implements ResizableHeight, AreaAvailable {
+    private int height;
+
+    @Override
+    public void setHeight(int newHeight) {
+        this.height = newHeight;
+    }
+
+    @Override
+    public int area() {
+        return this.height * this.height;
+    }
 }
+
