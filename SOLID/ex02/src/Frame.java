@@ -1,3 +1,5 @@
+package SOLID.ex02.src;
+
 public class Frame { 
     private byte[] data;
 

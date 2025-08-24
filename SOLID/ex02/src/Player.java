@@ -1,3 +1,5 @@
+package SOLID.ex02.src;
+
 public class Player implements Playable {
     private Frame last;
 

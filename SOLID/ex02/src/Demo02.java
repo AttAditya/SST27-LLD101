@@ -1,3 +1,5 @@
+package SOLID.ex02.src;
+
 public class Demo02 {
     public static void main(String[] args) {
         Playable player = new Player();
