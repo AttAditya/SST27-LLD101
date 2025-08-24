@@ -1,8 +1,20 @@
-public class ShippingCostCalculator {
-    double cost(Shipment s){
-        if ("STANDARD".equals(s.type)) return 50 + 5*s.weightKg;
-        if ("EXPRESS".equals(s.type))  return 80 + 8*s.weightKg;
-        if ("OVERNIGHT".equals(s.type))return 120 + 10*s.weightKg;
-        throw new IllegalArgumentException("Unknown type: " + s.type);
+abstract public class ShippingCostCalculator {
+    private int baseFare;
+    private int perKgPrice;
+
+    public ShippingCostCalculator(int baseFare, int perKgPrice) {
+        this.baseFare = baseFare;
+        this.perKgPrice = perKgPrice;
+    }
+
+    abstract public boolean isValidShipment(Shipment s);
+
+    public double cost(Shipment s) {
+        if (isValidShipment(s))
+            return this.baseFare + (this.perKgPrice * s.getWeight());
+            
+        throw new IllegalArgumentException(
+            "Unknown type: " + s.getType().toString()
+        );
     }
 }
