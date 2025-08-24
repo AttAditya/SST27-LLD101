@@ -1,3 +1,5 @@
+package SOLID.ex03.src;
+
 public class StandardShippingCostCalculator extends ShippingCostCalculator {
     public StandardShippingCostCalculator() {
         super(50, 5);

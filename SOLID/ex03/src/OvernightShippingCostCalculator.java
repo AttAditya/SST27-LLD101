@@ -1,3 +1,5 @@
+package SOLID.ex03.src;
+
 public class OvernightShippingCostCalculator extends ShippingCostCalculator {
     public OvernightShippingCostCalculator() {
         super(120, 10);

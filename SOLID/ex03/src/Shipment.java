@@ -1,3 +1,5 @@
+package SOLID.ex03.src;
+
 abstract public class Shipment {
     private ShipmentType type;
     private double weightKg;

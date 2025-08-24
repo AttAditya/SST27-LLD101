@@ -1,3 +1,5 @@
+package SOLID.ex03.src;
+
 abstract public class ShippingCostCalculator {
     private int baseFare;
     private int perKgPrice;
