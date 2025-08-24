@@ -1,7 +1,7 @@
 package solid.ex09.src;
 
 public class OrderController {
-    OrderRepository orderRepository;
+    private OrderRepository orderRepository;
 
     public OrderController(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;
