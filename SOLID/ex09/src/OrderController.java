@@ -7,7 +7,7 @@ public class OrderController {
         this.orderRepository = orderRepository;
     }
 
-    public void create(String id){
+    public void create(String id) {
         orderRepository.save(id);
         System.out.println("Created order: " + id);
     }
