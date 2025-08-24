@@ -1,7 +1,7 @@
-public class Player {
+public class Player implements Playable {
     private Frame last;
 
-    public void play(byte[] fileBytes){
+    public void play(byte[] fileBytes) {
         Frame f = new Frame(fileBytes);
         last = f;
 
