@@ -1,19 +1,38 @@
 package com.example.orders;
 
 public class OrderLine {
-    private String sku;
-    private int quantity;
-    private int unitPriceCents;
+    private final String sku;
+    private final int quantity;
+    private final int unitPriceCents;
 
-    public OrderLine(String sku, int quantity, int unitPriceCents) {
-        this.sku = sku;
-        this.quantity = quantity;
-        this.unitPriceCents = unitPriceCents;
+    public OrderLine(Builder builder) {
+        this.sku = builder.sku;
+        this.quantity = builder.quantity;
+        this.unitPriceCents = builder.unitPriceCents;
     }
 
     public String getSku() { return sku; }
     public int getQuantity() { return quantity; }
     public int getUnitPriceCents() { return unitPriceCents; }
 
-    public void setQuantity(int q) { this.quantity = q; }
+    public static class Builder {
+        private final String sku;
+        private final int unitPriceCents;
+        private int quantity;
+
+        public Builder(String sku, int quantity, int unitPriceCents) {
+            this.sku = sku;
+            this.unitPriceCents = unitPriceCents;
+            this.quantity = quantity;
+        }
+
+        public Builder quantity(int quantity) {
+            this.quantity = quantity;
+            return this;
+        }
+
+        public OrderLine build() {
+            return new OrderLine(this);
+        }
+    }
 }
