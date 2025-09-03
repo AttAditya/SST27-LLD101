@@ -2,6 +2,10 @@ package exercise;
 
 import java.util.*;
 
+import exercise.wrappers.EmployeeCSVWrapper;
+import exercise.wrappers.EmployeeDBWrapper;
+import exercise.wrappers.EmployeeLDAPWrapper;
+
 public class Client {
   public static void main(String[] args) {
     // Sample legacy data from three sources
@@ -20,8 +24,16 @@ public class Client {
       new EmployeeLDAP(Map.of("uid","302","givenName","Elena","sn","Garcia","mail","elena.garcia@example.org"))
     );
 
-    // TODO: Wrap each legacy object with the right adapter and collect into one list
     List<Employee> all = new ArrayList<>();
+    
+    for (EmployeeCSV employeeCSV: csvRows)
+      all.add(new EmployeeCSVWrapper(employeeCSV));
+    
+    for (EmployeeDB employeeDB: dbRows)
+      all.add(new EmployeeDBWrapper(employeeDB));
+
+    for (EmployeeLDAP employeeLDAP: ldapRows)
+      all.add(new EmployeeLDAPWrapper(employeeLDAP));
 
 
     EmployeePrinter.print(all);
