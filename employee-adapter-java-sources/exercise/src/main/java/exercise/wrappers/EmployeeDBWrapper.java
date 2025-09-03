@@ -4,35 +4,29 @@ import exercise.Employee;
 import exercise.EmployeeDB;
 
 public class EmployeeDBWrapper implements Employee {
-    private String id;
-    private String firstName;
-    private String lastName;
-    private String email;
+    private EmployeeDB employeeDB;
 
     public EmployeeDBWrapper(EmployeeDB employeeDB) {
-        this.id = employeeDB.getId() + "";
-        this.firstName = employeeDB.getFirstName();
-        this.lastName = employeeDB.getSurname();
-        this.email = employeeDB.getEmailAddress();
+        this.employeeDB = employeeDB;
     }
 
     @Override
     public String getId() {
-        return this.id;
+        return this.employeeDB.getId() + "";
     }
 
     @Override
     public String getFirstName() {
-        return this.firstName;
+        return this.employeeDB.getFirstName();
     }
 
     @Override
     public String getLastName() {
-        return this.lastName;
+        return this.employeeDB.getSurname();
     }
 
     @Override
     public String getEmail() {
-        return this.email;
+        return this.employeeDB.getEmailAddress();
     }
 }

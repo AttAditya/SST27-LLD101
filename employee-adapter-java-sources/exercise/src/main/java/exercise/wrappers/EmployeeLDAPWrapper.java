@@ -4,35 +4,29 @@ import exercise.Employee;
 import exercise.EmployeeLDAP;
 
 public class EmployeeLDAPWrapper implements Employee {
-    private String id;
-    private String firstName;
-    private String lastName;
-    private String email;
+    private EmployeeLDAP employeeLDAP;
 
     public EmployeeLDAPWrapper(EmployeeLDAP employeeLDAP) {
-        this.id = employeeLDAP.get("uid");
-        this.firstName = employeeLDAP.get("givenName");
-        this.lastName = employeeLDAP.get("sn");
-        this.email = employeeLDAP.get("mail");
+        this.employeeLDAP = employeeLDAP;
     }
 
     @Override
     public String getId() {
-        return this.id;
+        return this.employeeLDAP.get("uid");
     }
 
     @Override
     public String getFirstName() {
-        return this.firstName;
+        return this.employeeLDAP.get("givenName");
     }
 
     @Override
     public String getLastName() {
-        return this.lastName;
+        return this.employeeLDAP.get("sn");
     }
 
     @Override
     public String getEmail() {
-        return this.email;
+        return this.employeeLDAP.get("mail");
     }
 }

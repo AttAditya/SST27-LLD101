@@ -4,42 +4,29 @@ import exercise.Employee;
 import exercise.EmployeeCSV;
 
 public class EmployeeCSVWrapper implements Employee {
-    private String id;
-    private String firstName;
-    private String lastName;
-    private String email;
+    private EmployeeCSV employeeCSV;
 
     public EmployeeCSVWrapper(EmployeeCSV employeeCSV) {
-        String[] tokens = employeeCSV.tokens();
-
-        if (tokens.length != 4)
-            throw new RuntimeException(
-                "Invalid Token Count"
-            );
-
-        this.id = tokens[0];
-        this.firstName = tokens[1];
-        this.lastName = tokens[2];
-        this.email = tokens[3];
+        this.employeeCSV = employeeCSV;
     }
 
     @Override
     public String getId() {
-        return this.id;
+        return this.employeeCSV.tokens()[0];
     }
 
     @Override
     public String getFirstName() {
-        return this.firstName;
+        return this.employeeCSV.tokens()[0];
     }
 
     @Override
     public String getLastName() {
-        return this.lastName;
+        return this.employeeCSV.tokens()[0];
     }
 
     @Override
     public String getEmail() {
-        return this.email;
+        return this.employeeCSV.tokens()[0];
     }
 }
