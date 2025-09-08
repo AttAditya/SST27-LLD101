@@ -1,5 +1,9 @@
 package com.example.game;
 
+import com.example.game.effects.DamageBoost;
+import com.example.game.effects.GoldenAura;
+import com.example.game.effects.SpeedBoost;
+
 /**
  * Starter demo using only the base character.
  * TODOs guide you to implement decorators and compose them.
@@ -24,16 +28,16 @@ public class GameDemo {
         //      c) Remove GoldenAura by recomposing (rebuild chain without it)
         //
         // Example (after you implement):
-        // Character buffed = new DamageBoost(new SpeedBoost(base, 3), 15);
-        // buffed.move();
-        // buffed.attack();
-        //
-        // Character shiny = new GoldenAura(buffed);
-        // shiny.move();
-        // shiny.attack();
-        //
-        // Character withoutAura = buffed; // removal by recomposition
-        // withoutAura.move();
-        // withoutAura.attack();
+        Character buffed = new DamageBoost(new SpeedBoost(base, 3), 15);
+        buffed.move();
+        buffed.attack();
+        
+        Character shiny = new GoldenAura(buffed);
+        shiny.move();
+        shiny.attack();
+        
+        Character withoutAura = buffed; // removal by recomposition
+        withoutAura.move();
+        withoutAura.attack();
     }
 }
