@@ -1,5 +1,9 @@
 package com.example.notifications;
 
+import com.example.notifications.decorators.SMSDecorator;
+import com.example.notifications.decorators.SlackDecorator;
+import com.example.notifications.decorators.WhatsAppDecorator;
+
 /**
  * Starter demo that uses only the existing Email notifier.
  * TODOs guide you to add decorators and compose them.
@@ -10,6 +14,15 @@ public class Demo {
 
         // Baseline behavior (already works)
         base.notify("Baseline email only.");
+
+        Notifier smsAndEmail = new SMSDecorator(base, "+91-99999-11111");
+        smsAndEmail.notify("Build green ✅");
+
+        Notifier waAndEmail = new WhatsAppDecorator(base, "+91-88888-22222");
+        waAndEmail.notify("New login from Chrome on Windows.");
+
+        Notifier slackAndEmail = new SlackDecorator(base, "deployments");
+        slackAndEmail.notify("Deployment completed 🚀");
 
         // === YOUR TASKS ===
         // 1) Create a base decorator class: NotifierDecorator implements Notifier and wraps another Notifier.
